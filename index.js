@@ -4,23 +4,23 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
-const { ServiceError, UnknownError } = require("../utils/errors");
+const { ServiceError, UnknownError } = require("./utils/errors");
 
 // 默认读取项目根目录下的 .env 环境变量文件
 require("dotenv").config();
 // 进行数据库初始化
-require("../db/init");
+require("./db/init");
 
 // 引入路由
-const bookRouter = require("../routes/book");
-const issueRouter = require("../routes/issue");
-const adminRouter = require("../routes/admin");
-const captchaRouter = require("../routes/captcha");
-const userRouter = require("../routes/user");
-const typeRouter = require("../routes/type");
-const interviewRouter = require("../routes/interview");
-const commentRouter = require("../routes/comment");
-const uploadRouter = require("../routes/upload");
+const bookRouter = require("./routes/book");
+const issueRouter = require("./routes/issue");
+const adminRouter = require("./routes/admin");
+const captchaRouter = require("./routes/captcha");
+const userRouter = require("./routes/user");
+const typeRouter = require("./routes/type");
+const interviewRouter = require("./routes/interview");
+const commentRouter = require("./routes/comment");
+const uploadRouter = require("./routes/upload");
 
 // 创建服务器实例
 const app = express();

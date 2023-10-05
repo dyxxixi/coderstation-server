@@ -51,19 +51,19 @@ app.use("/api/interview", interviewRouter);
 app.use("/api/upload", uploadRouter);
 app.use("/res/captcha", captchaRouter);
 
-// // catch 404 and forward to error handler
-// app.use(function (req, res, next) {
-//   next(createError(404));
-// });
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
+});
 
-// // 错误处理，一旦发生了错误，就会到这里来
-// app.use(function (err, req, res, next) {
-//   if (err instanceof ServiceError) {
-//     res.send(err.toResponseJSON());
-//   } else {
-//     res.send(new UnknownError().toResponseJSON());
-//     throw err;
-//   }
-// });
+// 错误处理，一旦发生了错误，就会到这里来
+app.use(function (err, req, res, next) {
+  if (err instanceof ServiceError) {
+    res.send(err.toResponseJSON());
+  } else {
+    res.send(new UnknownError().toResponseJSON());
+    throw err;
+  }
+});
 
 module.exports = app;

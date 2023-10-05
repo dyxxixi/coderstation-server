@@ -54,10 +54,10 @@ exports.NotFoundError = class extends ServiceError {
 };
 
 // 未知错误
-// exports.UnknownError = class extends ServiceError {
-//   constructor() {
-//     super("server internal error", 500);
-//   }
-// };
+exports.UnknownError = class extends ServiceError {
+  constructor() {
+    super("server internal error", 500);
+  }
+};
 
 module.exports.ServiceError = ServiceError;

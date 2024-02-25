@@ -20,5 +20,6 @@
     "multer": "1.4.5-lts.1",
     "svg-captcha": "^1.4.0",
     "validate.js": "^0.13.1"
-  }
+  },
+  "packageManager": "pnpm@8.14.0"
 }
